@@ -174,9 +174,9 @@ HOME APPLIANCE CONTROL SYSTEM
 					<div id="DeviceAccess" class="arrangeVertically" style="margin-top:4vw;" >
 						<label for="DeviceModeSelect">Appliance Mode</label>
 						<select id="DeviceModeSelect" class="butStyl"> 
-							<option>MANUAL_SAFE</option>
-							<option>AUTO_NORMAL</option>
-							<option>AUTO_AI</option>
+							<option>MANUAL_SAFE(Not Supported)</option>
+							<option>AUTO_NORMAL(Not Supported)</option>
+							<option>AUTO_AI(Not Supported)</option>
 							<option>MANUAL_OVERRIDE</option>
 							<option >Select one</option>
 						</select>
@@ -732,7 +732,9 @@ function LiveStatusUpdate()
 }
 function DeviceVersionInfo()
 {
-	mc_Version.innerHTML = "Device: " + formatData(mc_WebThingsmap[mc_webpage_DC]["FWV"], "FWV", "Read") +"  Released on: " + formatData(mc_WebThingsmap[mc_webpage_DC]["BUILD_DATE"], "BUILD_DATE", "Read");
+	mc_Version.innerHTML = formatData(mc_WebThingsmap[mc_webpage_DC]["FWV"], "FWV", "Read") +
+	"(beta) Launched on:07.06.2026";
+	//+ formatData(mc_WebThingsmap[mc_webpage_DC]["BUILD_DATE"], "BUILD_DATE", "Read")
 }
 init();
 logChatBox("Welcome to the IOT application!");
