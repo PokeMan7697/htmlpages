@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <title>WaterManagement</title>
+        <style >
+        .containerbtn {
+            position:absolute;
+            width: 200px;
+            height: 30px;
+            margin-left: 10%;
+            margin-top: 2%;
+            color: red;
+            background-color: blue;  
+            text-align: center;          
+        }
+        .containerbtn2 {
+            position:absolute;
+            height: 25%;
+            width: 20%;
+            margin-left: 40%;
+            margin-bottom: 10%;
+            color: red;
+            background-color: blue;  
+            text-align: center;
+            border-radius: 50%;
+        }
+        .hdstyle{
+            position: relative;
+            width: auto;
+            font-size:x-large;
+            color: blue;
+            text-align: center;
+        }
+        .hdstyle2{
+            position: relative;
+            margin-left: 40%;
+            font-size:x-large;
+            color: blue;
+        }
+        .imgtyle{
+            position: relative;
+            background-image:-moz-linear-gradient();
+            height: 500px;
+            width: 1500px;
+        }
+        .UserFormPW{
+            position: absolute;
+            margin-left: 35%;
+            margin-right: 40%;
+            width: 30%;
+            height: 40%;
+            background-color:rgb(10, 10, 10); 
+            }
+        .UserForm{
+            position:relative;
+            width: 80%;
+            height: 10%;
+            margin-top: 5%;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-bottom: 5%;
+            }
+        .backgroundcol{
+            position: absolute;
+            top: 0;    
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;               /* Good browsers */
+            background-image: url("/ImageFolder/samplewater.jpg") ;
+            background-size: 100%;
+            background-color:darkred
+            /*background-repeat: no-repeat; */
+        }
+        .dropdownbutn{
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none; 
+        }
+        .dropdown{
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content{
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a{
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover{color: chocolate;}
+        .dropdown:hover .dropdown-content{display: block;}
+        .dropdown:hover .dropdownbutn{background-color: chartreuse;}
+        </style>
+    </head>
+    <body>
+        <div class= backgroundcol>
+        </div>
+        <h1 class="hdstyle"> 
+            Welcome to WaterManagement System
+        </h1>
+        <div class="dropdown">
+            <Button class="dropdownbutn"> HoverList</Button>
+            <div class="dropdown-content">
+                <a href= "#"> Link 1 </a>
+                <a href= "#"> Link 2 </a>
+            </div>              
+        </div>
+        <div>
+            <Button id= btn7 class = "containerbtn" onclick="foo2()" onmouseover="foo()">
+                Introduction
+            </Button>
+            <div class="UserFormPW">
+                <label class="hdstyle2" for="USN">LOGIN</label>
+                <input class="UserForm" type="text" placeholder="Enter Username" name= "USN" required>
+                <input class="UserForm" type="text" placeholder="Enter Password" name= "PW" required>
+                <Button id= btn7 class= "containerbtn2" type="submit" onclick="foo2()" onmouseover="foo()">
+                    Submit
+                </Button>
+                <Button id= btn7 type="button" style="margin-top : 10%" onclick="foo2()" onmouseover="foo()">
+                    New User? SignUP
+                </Button>
+            </div>
+        </div>
+        <p id="helloID">hiiii</p>
+        <script>
+            let d =0;
+            let btn2 = document.createElement("button");
+            btn2.innerHTML = "NewButton1";
+            btn2.className = "containerbtn";
+            function foo(){
+                document.getElementById("helloID").innerHTML = "MouseOver" + d++;
+                btn2.onclick = function(){
+                    foo2();
+                };
+                document.body.appendChild(btn2);
+            }
+            function foo2(){
+                document.getElementById("helloID").innerHTML = "SingleClick" + d++
+            }
+        </script>
+    </body> 
+</html>
